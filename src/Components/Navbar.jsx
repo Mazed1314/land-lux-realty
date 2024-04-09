@@ -1,6 +1,59 @@
-import { NavLink } from "react-router-dom";
+import { useContext } from "react";
+import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../Providers/AuthProvider";
 
 const Navbar = () => {
+  const { user, logOut } = useContext(AuthContext);
+  const handleLogOut = () => {
+    logOut()
+      .then(() => console.log("user log out"))
+      .catch((error) => console.error(error));
+  };
+  const navLinks = (
+    <>
+      <li>
+        <NavLink
+          className={({ isActive }) =>
+            isActive
+              ? "border-b-4 border-cyan-400 text-cyan-400 font-bold"
+              : "font-bold"
+          }
+          to="/"
+        >
+          Home
+        </NavLink>
+      </li>
+
+      {user && (
+        <>
+          <li>
+            <NavLink
+              className={({ isActive }) =>
+                isActive
+                  ? "border-b-4 border-cyan-400 text-cyan-400 font-bold"
+                  : "font-bold"
+              }
+              to="/table"
+            >
+              Dashboard
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              className={({ isActive }) =>
+                isActive
+                  ? "border-b-4 border-cyan-400 text-cyan-400 font-bold"
+                  : "font-bold"
+              }
+              to="/profile"
+            >
+              Profile
+            </NavLink>
+          </li>
+        </>
+      )}
+    </>
+  );
   return (
     <>
       <div className="navbar bg-base-100">
@@ -26,50 +79,31 @@ const Navbar = () => {
               tabIndex={0}
               className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
             >
-              <li>
-                <a>Sign In </a>
-              </li>
-              <li>
-                <a>Sign Up</a>
-              </li>
-              <NavLink
-                className={({ isActive }) =>
-                  isActive
-                    ? "text-green-700  rounded-lg font-bold"
-                    : "font-bold"
-                }
-                to="/"
-              >
-                Home
-              </NavLink>
+              {navLinks}
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl">
-            <img
-              src="/Images/book-vibe.png"
-              className="w-[60px] h-auto"
-              alt=""
-            />
-            LandLux Realty
-          </a>
+          <a className="btn btn-ghost text-xl">LandLuxe Realty</a>
         </div>
-        <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1 md:flex gap-8">
-            <NavLink
-              className={({ isActive }) =>
-                isActive
-                  ? "text-green-700 border-b-2 border-green-600 px-2 pb-2 font-bold"
-                  : "font-bold"
-              }
-              to="/"
-            >
-              Home
-            </NavLink>
-          </ul>
+        <div className="navbar-center hidden md:flex">
+          <ul className="menu menu-horizontal px-1">{navLinks}</ul>
         </div>
         <div className="navbar-end">
-          <a className="btn hidden md:block md:btn-sm mr-3   p-2">Login</a>
-          <a className="btn hidden md:block md:btn-sm mr-3   p-2">Sign Up</a>
+          {user ? (
+            <>
+              {/* {user.displayName ? (
+                <span>{user.displayName}</span>
+              ) : (
+                <span>{user.email}</span>
+              )} */}
+              <a onClick={handleLogOut} className="btn btn-sm">
+                Sign Out
+              </a>
+            </>
+          ) : (
+            <Link to="/login" className="btn btn-sm">
+              Login
+            </Link>
+          )}
         </div>
       </div>
     </>

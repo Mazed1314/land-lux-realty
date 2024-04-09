@@ -2,7 +2,7 @@ const Banner = () => {
   return (
     <div
       style={{
-        background: "linear-gradient(155deg, #38a169 55%, #fff 0%)",
+        background: "linear-gradient(155deg, #16C9F6 55%, #fff 0%)",
       }}
       className="hero min-h-screen rounded-t-lg"
     >
