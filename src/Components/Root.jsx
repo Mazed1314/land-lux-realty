@@ -5,8 +5,10 @@ import { Outlet } from "react-router-dom";
 const Root = () => {
   return (
     <div>
-      <Navbar className="mx-2 md:mx-12"></Navbar>
-      <Outlet className="mx-2 md:mx-12"></Outlet>
+      <div className="mx-2 md:mx-12">
+        <Navbar></Navbar>
+        <Outlet></Outlet>
+      </div>
       <Footer></Footer>
     </div>
   );
