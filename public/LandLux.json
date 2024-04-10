@@ -1,6 +1,6 @@
 [
   {
-    "image": "image_url_1.jpg",
+    "image": "/Images/Agricultural Land in Rural Area.jpg.crdownload",
     "estate_title": "Agricultural Land in Rural Area",
     "id": 1,
     "segment_name": "Agricultural Land",
@@ -12,7 +12,7 @@
     "facilities": ["Irrigation system", "Farmhouse"]
   },
   {
-    "image": "image_url_2.jpg",
+    "image": "/Images/Ranch with Livestock.jpg",
     "estate_title": "Ranch with Livestock",
     "id": 2,
     "segment_name": "Ranches",
@@ -24,7 +24,7 @@
     "facilities": ["Barns", "Fencing", "Watering troughs"]
   },
   {
-    "image": "image_url_3.jpg",
+    "image": "/Images/Organic Farm.jpg",
     "estate_title": "Organic Farm",
     "id": 3,
     "segment_name": "Farms",
@@ -36,7 +36,7 @@
     "facilities": ["Greenhouses", "Farmhouse", "Pond"]
   },
   {
-    "image": "image_url_4.jpg",
+    "image": "/Images/Vineyard with Wine Production.jpg",
     "estate_title": "Vineyard with Wine Production",
     "id": 4,
     "segment_name": "Vineyards",
@@ -48,7 +48,7 @@
     "facilities": ["Winery", "Tasting Room", "Cellar"]
   },
   {
-    "image": "image_url_5.jpg",
+    "image": "/Images/Forest Land for Conservation.jpg",
     "estate_title": "Forest Land for Conservation",
     "id": 5,
     "segment_name": "Forests",
@@ -60,49 +60,49 @@
     "facilities": ["Trails", "Picnic Areas", "Observation Tower"]
   },
   {
-    "image": "image_url_6.jpg",
+    "image": "/Images/Teak Plantation.jpg",
     "estate_title": "Teak Plantation",
     "id": 6,
     "segment_name": "Plantations",
     "description": "Embark on a lucrative venture with this thriving teak plantation spanning 50 acres in a tropical region. With its mature teak trees ready for harvest, the plantation offers a valuable investment opportunity for timber production. The property features a modern processing facility and comfortable staff quarters, ensuring efficient operations and worker accommodations. Whether you're seeking a profitable timber business or a sustainable forestry project, this teak plantation is primed for success. Seize the chance to own a piece of the world's most sought-after hardwood and reap the rewards for years to come.",
     "price": "$900,000",
-    "status": "sale",
+    "status": "rent",
     "area": "50 acres",
     "location": "Tropical Region, Country Z",
     "facilities": ["Processing Facility", "Staff Quarters"]
   },
   {
-    "image": "image_url_7.jpg",
+    "image": "/Images/Olive Grove.jpg",
     "estate_title": "Olive Grove",
     "id": 7,
     "segment_name": "Plantations",
     "description": "Experience the allure of Mediterranean living with this picturesque olive grove spanning 40 acres in a sun-kissed region. Bursting with olive trees laden with plump fruits, the grove offers the perfect setting for olive oil production. The property boasts a modern processing plant and inviting tasting room, allowing you to savor the flavors of freshly pressed olive oil. Whether you're a culinary enthusiast or an investor seeking a profitable agricultural venture, this olive grove promises a blend of rustic charm and culinary delight. Embrace the Mediterranean lifestyle and indulge in the timeless tradition of olive cultivation with this exquisite grove estate.",
     "price": "$800,000",
-    "status": "sale",
+    "status": "rent",
     "area": "40 acres",
     "location": "Mediterranean Region, Country X",
     "facilities": ["Processing Plant", "Tasting Room"]
   },
   {
-    "image": "image_url_8.jpg",
+    "image": "/Images/Fruit Orchard.jpg",
     "estate_title": "Fruit Orchard",
     "id": 8,
     "segment_name": "Plantations",
     "description": "Discover the bounty of nature with this thriving fruit orchard spanning 25 acres in a fertile valley. Bursting with a diverse array of fruit trees, including apples, oranges, and peaches, the orchard offers a year-round harvest of delicious produce. The property features a modern packaging facility and cold storage infrastructure, ensuring the quality and freshness of the fruits. Whether you're a fruit enthusiast or an aspiring orchardist, this orchard presents a golden opportunity to cultivate nature's bounty and reap the rewards of sustainable agriculture. Don't miss out on the chance to own this fruitful paradise.",
     "price": "$600,000",
-    "status": "sale",
+    "status": "rent",
     "area": "25 acres",
     "location": "Fertile Valley, Country Y",
     "facilities": ["Packaging Facility", "Cold Storage"]
   },
   {
-    "image": "image_url_9.jpg",
+    "image": "/Images/Rubber Plantation.jpg",
     "estate_title": "Rubber Plantation",
     "id": 9,
     "segment_name": "Plantations",
     "description": "Dive into the world of rubber production with this established plantation spanning 60 acres in a lush tropical rainforest. With its mature rubber trees and efficient tapping infrastructure, the plantation offers a lucrative opportunity for rubber latex extraction. The property includes a fully equipped processing unit and comfortable housing for laborers, ensuring smooth operations and worker welfare. Whether you're a seasoned rubber industry professional or an investor seeking a stable agricultural investment, this rubber plantation holds the promise of substantial returns. Seize the opportunity to tap into the booming rubber market and secure your foothold in this thriving industry.",
     "price": "$1,000,000",
-    "status": "sale",
+    "status": "rent",
     "area": "60 acres",
     "location": "Tropical Rainforest, Country Z",
     "facilities": ["Processing Unit", "Labor Housing"]

@@ -54,17 +54,14 @@ const Banner = () => {
               }}
             >
               <div
-                style={{
-                  background:
-                    "linear-gradient(180deg, #070211 0%, rgba(7, 2, 17, 0) 100%)",
-                }}
+                style={{ background: "rgba(0, 0, 0, 0.2)" }}
                 className="md:min-h-screen rounded flex p-4 items-center"
               >
                 <div className="md:w-4/6 mx-auto">
                   <h1 className="text-2xl text-gray-100 lg:text-5xl font-bold [text-shadow:_0_1px_0_rgb(0_0_0_/_40%)]">
                     Find Your Dream Plot with us
                   </h1>
-                  <p className="py-6 text-green-100">
+                  <p className="py-6 text-white">
                     Explore a wide range of plots with our real estate company,
                     where your dream location awaits. Let us assist you in
                     finding the perfect piece of land to build your ideal home
