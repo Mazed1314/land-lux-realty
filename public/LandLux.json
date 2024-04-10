@@ -8,7 +8,7 @@
     "price": "$100,000",
     "status": "sale",
     "area": "10 acres",
-    "location": "Rural Region, Country X",
+    "location": "Rural Region, Bangladesh",
     "facilities": ["Irrigation system", "Farmhouse"]
   },
   {
@@ -20,7 +20,7 @@
     "price": "$500,000",
     "status": "sale",
     "area": "50 acres",
-    "location": "Countryside, Country Y",
+    "location": "Countryside, Thailand",
     "facilities": ["Barns", "Fencing", "Watering troughs"]
   },
   {
@@ -32,7 +32,7 @@
     "price": "$700,000",
     "status": "sale",
     "area": "20 acres",
-    "location": "Scenic Valley, Country Z",
+    "location": "Scenic Valley, Scotland",
     "facilities": ["Greenhouses", "Farmhouse", "Pond"]
   },
   {
@@ -44,7 +44,7 @@
     "price": "$1,200,000",
     "status": "sale",
     "area": "30 acres",
-    "location": "Wine Region, Country X",
+    "location": "Wine Region, Finland",
     "facilities": ["Winery", "Tasting Room", "Cellar"]
   },
   {
@@ -56,7 +56,7 @@
     "price": "Contact for Price",
     "status": "sale",
     "area": "100 acres",
-    "location": "Conservation Area, Country Y",
+    "location": "Conservation Area, Germany",
     "facilities": ["Trails", "Picnic Areas", "Observation Tower"]
   },
   {
@@ -68,7 +68,7 @@
     "price": "$900,000",
     "status": "rent",
     "area": "50 acres",
-    "location": "Tropical Region, Country Z",
+    "location": "Tropical Region, Pakistan",
     "facilities": ["Processing Facility", "Staff Quarters"]
   },
   {
@@ -80,7 +80,7 @@
     "price": "$800,000",
     "status": "rent",
     "area": "40 acres",
-    "location": "Mediterranean Region, Country X",
+    "location": "Mediterranean Region, New Zealand",
     "facilities": ["Processing Plant", "Tasting Room"]
   },
   {
@@ -92,7 +92,7 @@
     "price": "$600,000",
     "status": "rent",
     "area": "25 acres",
-    "location": "Fertile Valley, Country Y",
+    "location": "Fertile Valley, Australia",
     "facilities": ["Packaging Facility", "Cold Storage"]
   },
   {
@@ -104,7 +104,7 @@
     "price": "$1,000,000",
     "status": "rent",
     "area": "60 acres",
-    "location": "Tropical Rainforest, Country Z",
+    "location": "Tropical Rainforest, Zimbabwe",
     "facilities": ["Processing Unit", "Labor Housing"]
   }
 ]

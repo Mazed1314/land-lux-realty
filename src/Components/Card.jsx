@@ -1,14 +1,22 @@
 import { NavLink } from "react-router-dom";
 
 const Card = ({ card }) => {
-  const { image, estate_title, status, price, description, segment_name } =
-    card;
+  const {
+    image,
+    estate_title,
+    status,
+    price,
+    area,
+    description,
+    segment_name,
+    id,
+  } = card;
 
   return (
-    <div className="card md:w-96 bg-base-100 shadow-xl border relative">
+    <div className="rounded-md md:w-96 bg-base-100 shadow-xl border relative">
       <figure className="p-4 ">
         <img
-          className="rounded-t-lg w-full h-[150px] md:h-[200px]"
+          className="rounded-t-md w-full h-[150px] md:h-[200px]"
           src={image}
           alt="Image"
         />
@@ -27,12 +35,18 @@ const Card = ({ card }) => {
         </small>
         <div className="">
           <h2 className="card-title font-bold text-2xl">{estate_title}</h2>
-          <p className="text-slate-500 font-medium text-md">{segment_name}</p>
         </div>
-        <div className="card-actions justify-between">
+        <div className="flex justify-between items-center">
+          <p className=" rounded-3xl font-medium text-lg">{segment_name}</p>
+          <p className="font-semibold text-lg  rounded-3xl">
+            Area :{" "}
+            <span className="text-slate-600 font-medium text-md">{area}</span>
+          </p>
+        </div>
+        <div className="card-actions justify-between text-gray-600">
           <p>
             {description.slice(0, description.indexOf("."))}...
-            <NavLink className={"font-bold"} to="/estate/detail">
+            <NavLink className={"font-bold"} to={`/estate-details/${id}`}>
               View Details
             </NavLink>
           </p>

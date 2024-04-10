@@ -9,6 +9,7 @@ import Register from "./Pages/Register";
 import Login from "./Pages/Login";
 import Profile from "./Pages/Profile";
 import ErrorPage from "./Pages/ErrorPage";
+import CardDetails from "./Components/CardDetails";
 
 const router = createBrowserRouter([
   {
@@ -32,6 +33,11 @@ const router = createBrowserRouter([
       {
         path: "/profile",
         element: <Profile></Profile>,
+      },
+      {
+        path: "/estate-details/:id",
+        element: <CardDetails></CardDetails>,
+        loader: () => fetch("/LandLux.json"),
       },
     ],
   },
