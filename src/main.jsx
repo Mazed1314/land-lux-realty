@@ -10,6 +10,7 @@ import Login from "./Pages/Login";
 import Profile from "./Pages/Profile";
 import ErrorPage from "./Pages/ErrorPage";
 import CardDetails from "./Components/CardDetails";
+import PrivateRoute from "./Components/PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -32,11 +33,19 @@ const router = createBrowserRouter([
       },
       {
         path: "/profile",
-        element: <Profile></Profile>,
+        element: (
+          <PrivateRoute>
+            <Profile></Profile>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/estate-details/:id",
-        element: <CardDetails></CardDetails>,
+        element: (
+          <PrivateRoute>
+            <CardDetails></CardDetails>
+          </PrivateRoute>
+        ),
         loader: () => fetch("/LandLux.json"),
       },
     ],

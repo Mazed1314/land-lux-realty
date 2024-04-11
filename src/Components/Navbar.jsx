@@ -11,45 +11,40 @@ const Navbar = () => {
   };
   const navLinks = (
     <>
-      <li>
-        <NavLink
-          className={({ isActive }) =>
-            isActive
-              ? "border-b-4 border-cyan-400 text-cyan-400 font-bold"
-              : "font-bold"
-          }
-          to="/"
-        >
-          Home
-        </NavLink>
-      </li>
+      <NavLink
+        className={({ isActive }) =>
+          isActive
+            ? "border-b-4 pb-2 border-cyan-400 text-cyan-400 font-bold"
+            : "font-bold"
+        }
+        to="/"
+      >
+        Home
+      </NavLink>
 
       {user && (
         <>
-          <li>
-            <NavLink
-              className={({ isActive }) =>
-                isActive
-                  ? "border-b-4 border-cyan-400 text-cyan-400 font-bold"
-                  : "font-bold"
-              }
-              to="/table"
-            >
-              Dashboard
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              className={({ isActive }) =>
-                isActive
-                  ? "border-b-4 border-cyan-400 text-cyan-400 font-bold"
-                  : "font-bold"
-              }
-              to="/profile"
-            >
-              Profile
-            </NavLink>
-          </li>
+          <NavLink
+            className={({ isActive }) =>
+              isActive
+                ? "border-b-4 pb-2 border-cyan-400 text-cyan-400 font-bold"
+                : "font-bold"
+            }
+            to="/dashboard"
+          >
+            Dashboard
+          </NavLink>
+
+          <NavLink
+            className={({ isActive }) =>
+              isActive
+                ? "border-b-4 pb-2 border-cyan-400 text-cyan-400 font-bold"
+                : "font-bold"
+            }
+            to="/profile"
+          >
+            Profile
+          </NavLink>
         </>
       )}
     </>
@@ -82,22 +77,47 @@ const Navbar = () => {
               {navLinks}
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl">LandLuxe Realty</a>
+          <a>
+            <img
+              src="Images/LandLux-removebg-preview.png"
+              className="w-40"
+              alt=""
+            />
+          </a>
         </div>
         <div className="navbar-center hidden md:flex">
-          <ul className="menu menu-horizontal px-1">{navLinks}</ul>
+          <ul className="menu menu-horizontal px-1 flex gap-8">{navLinks}</ul>
         </div>
         <div className="navbar-end">
           {user ? (
             <>
-              {/* {user.displayName ? (
-                <span>{user.displayName}</span>
-              ) : (
-                <span>{user.email}</span>
-              )} */}
-              <a onClick={handleLogOut} className="btn btn-sm">
-                Sign Out
-              </a>
+              <div
+                className="dropdown dropdown-end hover:tooltip tooltip-open hover:tooltip-bottom"
+                data-tip={user.displayName}
+              >
+                <div
+                  tabIndex={0}
+                  role="button"
+                  className="btn btn-ghost btn-circle avatar"
+                >
+                  <div className="w-10 rounded-full">
+                    <img
+                      alt="Tailwind CSS Navbar component"
+                      src={user.photoURL}
+                    />
+                  </div>
+                </div>
+                <ul
+                  tabIndex={0}
+                  className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+                >
+                  <NavLink to="/profile">Profile</NavLink>
+                  <NavLink to="/profile">Settings</NavLink>
+                  <NavLink onClick={handleLogOut} to="/">
+                    Logout
+                  </NavLink>
+                </ul>
+              </div>
             </>
           ) : (
             <Link to="/login" className="btn btn-sm">
