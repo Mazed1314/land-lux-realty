@@ -14,7 +14,7 @@ const Navbar = () => {
       <NavLink
         className={({ isActive }) =>
           isActive
-            ? "border-b-4 pb-2 border-cyan-400 text-cyan-400 font-bold"
+            ? "md:border-b-4 pb-2 border-cyan-400 text-cyan-400 font-bold"
             : "font-bold"
         }
         to="/"
@@ -30,31 +30,41 @@ const Navbar = () => {
                 ? "border-b-4 pb-2 border-cyan-400 text-cyan-400 font-bold"
                 : "font-bold"
             }
-            to="/dashboard"
-          >
-            Dashboard
-          </NavLink>
-
-          <NavLink
-            className={({ isActive }) =>
-              isActive
-                ? "border-b-4 pb-2 border-cyan-400 text-cyan-400 font-bold"
-                : "font-bold"
-            }
             to="/profile"
           >
             Profile
           </NavLink>
         </>
       )}
+
+      <NavLink
+        className={({ isActive }) =>
+          isActive
+            ? "md:border-b-4 pb-2 border-cyan-400 text-cyan-400 font-bold"
+            : "font-bold"
+        }
+        to="/about"
+      >
+        About
+      </NavLink>
+      <NavLink
+        className={({ isActive }) =>
+          isActive
+            ? "md:border-b-4 pb-2 border-cyan-400 text-cyan-400 font-bold"
+            : "font-bold"
+        }
+        to="/contact"
+      >
+        Contact
+      </NavLink>
     </>
   );
   return (
     <>
-      <div className="navbar bg-base-100">
+      <div className="navbar bg-base-100 ">
         <div className="navbar-start">
           <div className="dropdown">
-            <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+            <div tabIndex={0} role="button" className="btn btn-ghost md:hidden">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5"
@@ -77,10 +87,10 @@ const Navbar = () => {
               {navLinks}
             </ul>
           </div>
-          <a>
+          <a className="">
             <img
               src="Images/LandLux-removebg-preview.png"
-              className="w-40"
+              className="w-48"
               alt=""
             />
           </a>
@@ -91,20 +101,22 @@ const Navbar = () => {
         <div className="navbar-end">
           {user ? (
             <>
-              <div
-                className="dropdown dropdown-end hover:tooltip tooltip-open hover:tooltip-bottom"
-                data-tip={user.displayName}
-              >
+              <div className="dropdown dropdown-end ">
                 <div
-                  tabIndex={0}
-                  role="button"
-                  className="btn btn-ghost btn-circle avatar"
+                  className="hover:tooltip tooltip-open hover:tooltip-bottom"
+                  data-tip={user.displayName}
                 >
-                  <div className="w-10 rounded-full">
-                    <img
-                      alt="Tailwind CSS Navbar component"
-                      src={user.photoURL}
-                    />
+                  <div
+                    tabIndex={0}
+                    role="button"
+                    className="btn btn-ghost btn-circle avatar"
+                  >
+                    <div className="w-10 rounded-full">
+                      <img
+                        alt="Tailwind CSS Navbar component"
+                        src={user.photoURL}
+                      />
+                    </div>
                   </div>
                 </div>
                 <ul
@@ -120,9 +132,20 @@ const Navbar = () => {
               </div>
             </>
           ) : (
-            <Link to="/login" className="btn btn-sm">
-              Login
-            </Link>
+            <>
+              <Link
+                to="/login"
+                className="btn border-sky-500 bg-transparent text-sky-500 btn-xs md:btn-sm mr-2"
+              >
+                Login
+              </Link>
+              <Link
+                to="/register"
+                className="btn border-black text-black bg-transparent btn-xs md:btn-sm"
+              >
+                Register
+              </Link>
+            </>
           )}
         </div>
       </div>

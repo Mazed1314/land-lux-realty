@@ -1,12 +1,26 @@
 import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
+import { FcGoogle } from "react-icons/fc";
+import { FaGithub } from "react-icons/fa";
 const Login = () => {
-  const { signInUser, signInWithGoogle } = useContext(AuthContext);
+  const { signInUser, signInWithGoogle, signInWithGitHub } =
+    useContext(AuthContext);
   const navigate = useNavigate();
 
   const handleGoogle = (e) => {
     signInWithGoogle()
+      .then((userCredential) => {
+        console.log(userCredential.user);
+        e.target.reset();
+        navigate("/profile");
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
+  const handleGithub = (e) => {
+    signInWithGitHub()
       .then((userCredential) => {
         console.log(userCredential.user);
         e.target.reset();
@@ -79,10 +93,19 @@ const Login = () => {
               <button className="btn btn-active btn-link">Register</button>
             </Link>
           </p>
-          <p className="text-center">or</p>
-          <p className="flex justify-center">
-            <a onClick={handleGoogle} className="btn btn-sm my-2">
-              Login With Google
+          <p className="text-center">Sign in with</p>
+          <p className="flex justify-center my-4 gap-4">
+            <a
+              onClick={handleGoogle}
+              className="px-2 border rounded-full btn btn-sm"
+            >
+              <FcGoogle />
+            </a>
+            <a
+              onClick={handleGithub}
+              className="px-2 border rounded-full btn btn-sm text-xl"
+            >
+              <FaGithub />
             </a>
           </p>
         </div>

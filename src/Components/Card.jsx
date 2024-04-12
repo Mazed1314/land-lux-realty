@@ -46,7 +46,10 @@ const Card = ({ card }) => {
         <div className="card-actions justify-between text-gray-600">
           <p>
             {description.slice(0, description.indexOf("."))}...
-            <NavLink className={"font-bold"} to={`/estate-details/${id}`}>
+            <NavLink
+              className={"font-bold text-black"}
+              to={`/estate-details/${id}`}
+            >
               View Details
             </NavLink>
           </p>

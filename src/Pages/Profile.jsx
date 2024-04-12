@@ -1,12 +1,14 @@
 import { useContext } from "react";
 import { AuthContext } from "../Providers/AuthProvider";
+import { FaEdit } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Profile = () => {
   const { user } = useContext(AuthContext);
   console.log(user);
   return (
-    <div className="flex justify-center">
-      <div className="flex flex-col justify-center max-w-xs p-6 shadow-md rounded-xl sm:px-12 dark:bg-gray-50 dark:text-gray-800">
+    <div className="flex justify-center my-4">
+      <div className="relative flex flex-col justify-center max-w-sm  p-6 shadow-md rounded-xl sm:px-12 dark:bg-gray-50 dark:text-gray-800">
         <img
           src={user?.photoURL}
           alt=""
@@ -21,7 +23,20 @@ const Profile = () => {
               Full-stack developer
             </p>
           </div>
+          <div className="">
+            <p className="px-5 text-xs sm:text-base dark:text-gray-600">
+              <span className="text-black font-semibold">Email : </span>
+              {user?.email}
+            </p>
+            <p className="px-5 text-xs sm:text-base dark:text-gray-600">
+              <span className="text-black font-semibold">ProviderId :</span>{" "}
+              {user?.providerData[0]?.providerId}
+            </p>
+          </div>
           <div className="flex justify-center pt-2 space-x-4 align-center">
+            <Link to={"/"}>
+              <FaEdit className="absolute top-2 right-2 text-2xl text-sky-400" />
+            </Link>
             <a
               rel="noopener noreferrer"
               href="#"
