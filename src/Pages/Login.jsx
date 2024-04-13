@@ -1,14 +1,16 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { FaRegEye, FaRegEyeSlash } from "react-icons/fa6";
 
 const Login = () => {
   const { signInUser, signInWithGoogle, signInWithGitHub } =
     useContext(AuthContext);
+  const [show, setShow] = useState("false");
 
   const handleGoogle = (e) => {
     signInWithGoogle()
@@ -60,10 +62,12 @@ const Login = () => {
       });
   };
   return (
-    <div className="hero min-h-screen bg-base-200">
+    <div className="hero md:min-h-screen bg-black rounded-t-md">
       <div className="hero-content flex-col">
         <div className="text-center">
-          <h1 className="text-5xl font-bold">Login now!</h1>
+          <h1 className="text-2xl md:text-5xl text-white font-bold">
+            Login now!
+          </h1>
         </div>
         <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
           <form onSubmit={handleLogin} className="card-body pb-0">
@@ -79,17 +83,23 @@ const Login = () => {
                 required
               />
             </div>
-            <div className="form-control">
+            <div className="form-control relative">
               <label className="label">
                 <span className="label-text">Password</span>
               </label>
               <input
-                type="password"
+                type={show ? "password" : "text"}
                 name="password"
                 placeholder="password"
                 className="input input-bordered"
                 required
               />
+              <span
+                onClick={() => setShow(!show)}
+                className="absolute top-12 right-2"
+              >
+                {show ? <FaRegEyeSlash /> : <FaRegEye />}
+              </span>
               <label className="label">
                 <a href="#" className="label-text-alt link link-hover">
                   Forgot password?
@@ -97,14 +107,16 @@ const Login = () => {
               </label>
             </div>
             <div className="form-control mt-6">
-              <button className="btn btn-primary">Login</button>
+              <button className="btn bg-sky-400 text-white">Login</button>
             </div>
           </form>
           <ToastContainer />
           <p className="text-center">
             New here ? Please{" "}
             <Link to="/register">
-              <button className="btn btn-active btn-link">Register</button>
+              <button className="btn btn-active btn-link text-sky-500">
+                Register
+              </button>
             </Link>
           </p>
           <p className="text-center">Sign in with</p>

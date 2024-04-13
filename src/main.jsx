@@ -11,6 +11,8 @@ import Profile from "./Pages/Profile";
 import ErrorPage from "./Pages/ErrorPage";
 import CardDetails from "./Components/CardDetails";
 import PrivateRoute from "./Components/PrivateRoute";
+import About from "./Components/About";
+import Contact from "./Components/Contact";
 
 const router = createBrowserRouter([
   {
@@ -33,11 +35,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/about",
-        element: <Login></Login>,
+        element: <About></About>,
       },
       {
         path: "/contact",
-        element: <Login></Login>,
+        element: <Contact></Contact>,
       },
       {
         path: "/profile",

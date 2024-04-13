@@ -26,7 +26,7 @@ const Footer = () => {
               Contact Us
             </h4>
             <p className="text-sm">
-              123 LandLuxe Street, Chittagong, Bangladesh
+              2312 LandLuxe Street, Chittagong, Bangladesh
             </p>
             <p className="text-sm">Email: info@landluxrealty.com</p>
             <p className="text-sm">Phone: +123-456-7890</p>

@@ -3,10 +3,14 @@ import Card from "./Card";
 
 const Estate = () => {
   const estate = useLoaderData();
-  console.log(estate);
+  // console.log(estate);
   return (
-    <>
-      <h2 className="text-3xl font-bold py-8 text-center text-gray-800">
+    <div
+    // style={{
+    //   background: "linear-gradient(155deg, #000000 20%, #fff 0%)",
+    // }}
+    >
+      <h2 className="text-3xl font-bold py-8 text-center text-gray-200">
         ESTATE
       </h2>
       <div className="flex justify-center">
@@ -26,7 +30,7 @@ const Estate = () => {
           <Card key={index} card={card}></Card>
         ))}
       </div>
-    </>
+    </div>
   );
 };
 

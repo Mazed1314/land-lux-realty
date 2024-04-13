@@ -24,8 +24,8 @@ const Card = ({ card }) => {
       <div className="card-body pt-0">
         <small>
           <div
-            style={{ background: "rgba(255, 255, 255, 0.9)" }}
-            className="border border-sky-300 absolute -rotate-45 top-4 left-1 p-2 rounded text-black"
+            // style={{ background: "rgba(255, 255, 255, 0.9)" }}
+            className="border bg-orange-500 text-white absolute -rotate-45 top-4 left-1 p-2 rounded"
           >
             <div className="font-bold text-md">{price}</div>
             <div className="text-center text-bold">

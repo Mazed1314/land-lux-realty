@@ -3,15 +3,19 @@ import { AuthContext } from "../Providers/AuthProvider";
 import { useContext, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { FaRegEye, FaRegEyeSlash } from "react-icons/fa6";
+import { updateProfile } from "firebase/auth";
 
 const Register = () => {
   const { createUser } = useContext(AuthContext);
-
   const [registerError, setRegisterError] = useState("");
+  const [show, setShow] = useState("false");
 
   const handleRegister = (e) => {
     e.preventDefault();
+    // eslint-disable-next-line no-unused-vars
     const name = e.target.name.value;
+    // eslint-disable-next-line no-unused-vars
     const photoURL = e.target.photoURL.value;
     const email = e.target.email.value;
     const password = e.target.password.value;
@@ -37,10 +41,12 @@ const Register = () => {
     // console.log(name, email, password, photoURL);
     createUser(email, password)
       .then((userCredential) => {
+        updateProfile();
         console.log(userCredential.user);
         e.target.reset();
-        const notifyS = () => toast.success("Successfully create a user");
-        notifyS();
+        const notifySuccess = () =>
+          toast.success("Successfully register a user");
+        notifySuccess();
       })
       .catch((error) => {
         console.error(error);
@@ -52,12 +58,14 @@ const Register = () => {
   };
 
   return (
-    <div className="hero min-h-screen bg-base-200">
+    <div className="hero md:min-h-screen bg-black rounded-t-md">
       <div className="hero-content flex-col">
         <div className="text-center">
-          <h1 className="text-5xl font-bold">Please Register here</h1>
+          <h1 className="text-2xl text-white md:text-5xl font-bold">
+            Please Register here
+          </h1>
         </div>
-        <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+        <div className="card shrink-0 w-full max-w-sm shadow-sky-400 shadow-sm my-2 bg-base-100">
           <form onSubmit={handleRegister} className="card-body">
             <div className="form-control">
               <label className="label">
@@ -95,23 +103,29 @@ const Register = () => {
                 required
               />
             </div>
-            <div className="form-control">
+            <div className="form-control relative">
               <label className="label">
                 <span className="label-text">Password</span>
               </label>
               <input
-                type="password"
+                type={show ? "password" : "text"}
                 name="password"
                 placeholder="password"
                 className="input input-bordered"
                 required
               />
+              <span
+                onClick={() => setShow(!show)}
+                className="absolute top-12 right-2"
+              >
+                {show ? <FaRegEyeSlash /> : <FaRegEye />}
+              </span>
             </div>
             {registerError && (
               <p className="text-yellow-500">{registerError}</p>
             )}
             <div className="form-control mt-6">
-              <button className="btn btn-primary">Register</button>
+              <button className="btn bg-sky-400 text-white">Register</button>
             </div>
           </form>
           <ToastContainer />
@@ -119,7 +133,9 @@ const Register = () => {
           <p className="text-center px-2">
             Allready have an account ? please
             <Link to="/login">
-              <button className="btn btn-active btn-link">Login</button>
+              <button className="btn btn-active text-sky-500 btn-link">
+                Login
+              </button>
             </Link>
           </p>
         </div>

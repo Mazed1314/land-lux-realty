@@ -37,16 +37,14 @@ const AuthProvider = ({ children }) => {
     return signInWithPopup(auth, gitProvider);
   };
   const logOut = () => {
-    setLoading(false);
+    setLoading(true);
     return signOut(auth);
   };
 
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
-      if (currentUser) {
-        setUser(currentUser);
-        setLoading(false);
-      }
+      setUser(currentUser);
+      setLoading(false);
     });
     return () => {
       unSubscribe();
