@@ -1,21 +1,53 @@
 import { Link } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
-import { useContext } from "react";
+import { useContext, useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 const Register = () => {
   const { createUser } = useContext(AuthContext);
+
+  const [registerError, setRegisterError] = useState("");
 
   const handleRegister = (e) => {
     e.preventDefault();
     const name = e.target.name.value;
+    const photoURL = e.target.photoURL.value;
     const email = e.target.email.value;
     const password = e.target.password.value;
-    console.log(name, email, password);
+    if (password.length < 6) {
+      setRegisterError("Password should be at least 6 Characters");
+      return;
+    }
+    if (!/^(?=.*[A-Z]).+$/.test(password)) {
+      setRegisterError(
+        "Password should be contain at least one uppercase letter"
+      );
+      return;
+    }
+    if (!/^(?=.*[a-z]).+$/.test(password)) {
+      setRegisterError(
+        "Password should be contain at least one Lowercase letter"
+      );
+      return;
+    }
+
+    setRegisterError("");
+
+    // console.log(name, email, password, photoURL);
     createUser(email, password)
       .then((userCredential) => {
         console.log(userCredential.user);
+        e.target.reset();
+        const notifyS = () => toast.success("Successfully create a user");
+        notifyS();
       })
       .catch((error) => {
         console.error(error);
+        // setRegisterError(error.message);
+        const test = error.message;
+        const notify = () => toast.warning(test);
+        notify();
       });
   };
 
@@ -35,6 +67,18 @@ const Register = () => {
                 type="text"
                 name="name"
                 placeholder="name"
+                className="input input-bordered"
+                required
+              />
+            </div>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Photo Link</span>
+              </label>
+              <input
+                type="text"
+                name="photoURL"
+                placeholder="Photo link"
                 className="input input-bordered"
                 required
               />
@@ -63,10 +107,15 @@ const Register = () => {
                 required
               />
             </div>
+            {registerError && (
+              <p className="text-yellow-500">{registerError}</p>
+            )}
             <div className="form-control mt-6">
               <button className="btn btn-primary">Register</button>
             </div>
           </form>
+          <ToastContainer />
+
           <p className="text-center px-2">
             Allready have an account ? please
             <Link to="/login">

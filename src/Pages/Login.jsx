@@ -1,22 +1,28 @@
 import { useContext } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 const Login = () => {
   const { signInUser, signInWithGoogle, signInWithGitHub } =
     useContext(AuthContext);
-  const navigate = useNavigate();
 
   const handleGoogle = (e) => {
     signInWithGoogle()
       .then((userCredential) => {
         console.log(userCredential.user);
         e.target.reset();
-        navigate("/profile");
+        const notifyGl = () => toast.success("Successfully Google Login");
+        notifyGl();
       })
       .catch((error) => {
         console.error(error);
+        const GlError = error.message;
+        const notifyGlError = () => toast.error(GlError);
+        notifyGlError();
       });
   };
   const handleGithub = (e) => {
@@ -24,10 +30,14 @@ const Login = () => {
       .then((userCredential) => {
         console.log(userCredential.user);
         e.target.reset();
-        navigate("/profile");
+        const notifyG = () => toast.success("Successfully Github Login");
+        notifyG();
       })
       .catch((error) => {
         console.error(error);
+        const GitError = error.message;
+        const notifyGitError = () => toast.error(GitError);
+        notifyGitError();
       });
   };
   const handleLogin = (e) => {
@@ -40,10 +50,13 @@ const Login = () => {
       .then((userCredential) => {
         console.log(userCredential.user);
         e.target.reset();
-        navigate("/profile");
+        const notifyS = () => toast.success("Successfully Login");
+        notifyS();
       })
       .catch((error) => {
         console.error(error);
+        const notify = () => toast.error("Wrong email or password");
+        notify();
       });
   };
   return (
@@ -59,7 +72,7 @@ const Login = () => {
                 <span className="label-text">Email</span>
               </label>
               <input
-                type="email"
+                type="text"
                 name="email"
                 placeholder="email"
                 className="input input-bordered"
@@ -87,6 +100,7 @@ const Login = () => {
               <button className="btn btn-primary">Login</button>
             </div>
           </form>
+          <ToastContainer />
           <p className="text-center">
             New here ? Please{" "}
             <Link to="/register">
