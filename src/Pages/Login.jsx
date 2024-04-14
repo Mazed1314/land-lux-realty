@@ -6,6 +6,7 @@ import { FaGithub } from "react-icons/fa";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa6";
+import { Helmet } from "react-helmet-async";
 
 const Login = () => {
   const { signInUser, signInWithGoogle, signInWithGitHub } =
@@ -57,12 +58,15 @@ const Login = () => {
       })
       .catch((error) => {
         console.error(error);
-        const notify = () => toast.error("Wrong email or password");
+        const notify = () => toast.error("Wrong email or password", error);
         notify();
       });
   };
   return (
     <div className="hero md:min-h-screen bg-black rounded-t-md">
+      <Helmet>
+        <title>LandLuxe | Login</title>
+      </Helmet>
       <div className="hero-content flex-col">
         <div className="text-center">
           <h1 className="text-2xl md:text-5xl text-white font-bold">

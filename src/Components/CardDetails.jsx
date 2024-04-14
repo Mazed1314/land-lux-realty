@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { useLoaderData, useParams } from "react-router-dom";
 
 const CardDetails = () => {
@@ -17,6 +18,9 @@ const CardDetails = () => {
   } = card;
   return (
     <div className="mx-2 md:mx-20 bg-slate-50">
+      <Helmet>
+        <title>LandLuxe | Estate_details : {id}</title>
+      </Helmet>
       <h2 className="text-center font-bold text-2xl my-6 pt-8 rounded-t-md">
         {estate_title}
       </h2>
