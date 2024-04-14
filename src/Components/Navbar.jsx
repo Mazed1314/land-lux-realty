@@ -101,9 +101,9 @@ const Navbar = () => {
         <div className="navbar-end">
           {user ? (
             <>
-              <div className="dropdown dropdown-end ">
+              <div className="dropdown dropdown-end z-10">
                 <div
-                  className="hover:tooltip tooltip-open hover:tooltip-bottom"
+                  className="hover:tooltip tooltip-open hover:tooltip-bottom z-10"
                   data-tip={user.displayName}
                 >
                   <div
@@ -121,7 +121,7 @@ const Navbar = () => {
                   className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
                 >
                   <NavLink to="/profile">Profile</NavLink>
-                  <NavLink to="/profile">Settings</NavLink>
+                  <NavLink to="/setting">Settings</NavLink>
                   <NavLink onClick={handleLogOut} to="/">
                     Logout
                   </NavLink>

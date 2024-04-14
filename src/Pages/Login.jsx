@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
@@ -9,17 +9,24 @@ import { FaRegEye, FaRegEyeSlash } from "react-icons/fa6";
 import { Helmet } from "react-helmet-async";
 
 const Login = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
+  console.log("location in the login page", location);
+  const from = location?.state ? location.state : "/profile";
+
   const { signInUser, signInWithGoogle, signInWithGitHub } =
     useContext(AuthContext);
   const [show, setShow] = useState("false");
 
-  const handleGoogle = (e) => {
+  const handleGoogle = () => {
     signInWithGoogle()
       .then((userCredential) => {
         console.log(userCredential.user);
-        e.target.reset();
         const notifyGl = () => toast.success("Successfully Google Login");
         notifyGl();
+        if (userCredential.user) {
+          navigate(from);
+        }
       })
       .catch((error) => {
         console.error(error);
@@ -28,11 +35,11 @@ const Login = () => {
         notifyGlError();
       });
   };
-  const handleGithub = (e) => {
+  const handleGithub = () => {
     signInWithGitHub()
       .then((userCredential) => {
         console.log(userCredential.user);
-        e.target.reset();
+        navigate(from);
         const notifyG = () => toast.success("Successfully Github Login");
         notifyG();
       })
@@ -53,25 +60,25 @@ const Login = () => {
       .then((userCredential) => {
         console.log(userCredential.user);
         e.target.reset();
+        navigate(from);
+
         const notifyS = () => toast.success("Successfully Login");
         notifyS();
       })
       .catch((error) => {
-        console.error(error);
-        const notify = () => toast.error("Wrong email or password", error);
+        console.error(error.message);
+        const notify = () => toast.error("Wrong email or password");
         notify();
       });
   };
   return (
-    <div className="hero md:min-h-screen bg-black rounded-t-md">
+    <div className="hero md:min-h-screen bg-gray-50 rounded-t-md">
       <Helmet>
         <title>LandLuxe | Login</title>
       </Helmet>
       <div className="hero-content flex-col">
         <div className="text-center">
-          <h1 className="text-2xl md:text-5xl text-white font-bold">
-            Login now!
-          </h1>
+          <h1 className="text-2xl md:text-5xl font-bold">Login now!</h1>
         </div>
         <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
           <form onSubmit={handleLogin} className="card-body pb-0">

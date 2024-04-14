@@ -14,14 +14,14 @@ const Footer = () => {
             <h4 className="text-lg font-semibold mb-4 text-center">
               About LandLuxe Realty
             </h4>
-            <p className="text-sm">
+            <p className="text-sm text-center">
               LandLuxe Realty specializes in providing premium land real estate
               solutions to our clients. With a focus on integrity and
               professionalism, we strive to exceed expectations and deliver
               exceptional service tailored to individual needs.
             </p>
           </div>
-          <div className="mb-8">
+          <div className="mb-8 text-center">
             <h4 className="text-lg font-semibold mb-4 text-center">
               Contact Us
             </h4>

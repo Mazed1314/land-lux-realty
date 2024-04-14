@@ -6,9 +6,9 @@ import { Helmet } from "react-helmet-async";
 
 const Profile = () => {
   const { user } = useContext(AuthContext);
-  console.log(user);
+  // console.log(user);
   return (
-    <div className="flex justify-center py-4 rounded-t-md bg-black">
+    <div className="flex justify-center py-4 rounded-t-md bg-gray-50">
       <Helmet>
         <title>LandLuxe | Profile</title>
       </Helmet>
@@ -38,7 +38,7 @@ const Profile = () => {
             </p>
           </div>
           <div className="flex justify-center pt-2 space-x-4 align-center">
-            <Link to={"/"}>
+            <Link to={"/setting"}>
               <FaEdit className="absolute top-2 right-2 text-2xl text-sky-400" />
             </Link>
             <a

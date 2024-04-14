@@ -10,9 +10,7 @@ const Estate = () => {
     //   background: "linear-gradient(155deg, #000000 20%, #fff 0%)",
     // }}
     >
-      <h2 className="text-3xl font-bold py-8 text-center text-gray-200">
-        ESTATE
-      </h2>
+      <h2 className="text-3xl font-bold py-8 text-center">ESTATE</h2>
       <div className="flex justify-center">
         <p className="px-2 md:w-10/12 text-center text-lg text-gray-700 pb-4">
           Welcome to the epitome of luxury living at Land Luxe Realty's

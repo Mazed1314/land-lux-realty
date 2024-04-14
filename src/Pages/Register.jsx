@@ -59,17 +59,17 @@ const Register = () => {
   };
 
   return (
-    <div className="hero md:min-h-screen bg-black rounded-t-md">
+    <div className="hero md:min-h-screen bg-gray-50 rounded-t-md">
       <Helmet>
         <title>LandLuxe | Register</title>
       </Helmet>
       <div className="hero-content flex-col">
         <div className="text-center">
-          <h1 className="text-2xl text-white md:text-5xl font-bold">
+          <h1 className="text-2xl md:text-5xl font-bold">
             Please Register here
           </h1>
         </div>
-        <div className="card shrink-0 w-full max-w-sm shadow-sky-400 shadow-sm my-2 bg-base-100">
+        <div className="card shrink-0 w-full max-w-sm shadow-2xl my-2 bg-base-100">
           <form onSubmit={handleRegister} className="card-body">
             <div className="form-control">
               <label className="label">

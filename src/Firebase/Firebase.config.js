@@ -1,13 +1,14 @@
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 
+console.log(import.meta.env.VITE_PASS);
 const firebaseConfig = {
-  apiKey: "AIzaSyCkelk5CCre-c0C8trVVoHc0OCsoP1U_sE",
-  authDomain: "landlux-realty.firebaseapp.com",
-  projectId: "landlux-realty",
-  storageBucket: "landlux-realty.appspot.com",
-  messagingSenderId: "401824025706",
-  appId: "1:401824025706:web:bb9918b7e131332bf1ce13",
+  apiKey: import.meta.env.VITE_APIKEY,
+  authDomain: import.meta.env.VITE_AUTHDOMAIN,
+  projectId: import.meta.env.VITE_PROJECTID,
+  storageBucket: import.meta.env.VITE_STORAGEBUCKET,
+  messagingSenderId: import.meta.env.VITE_MESSAGINGSENDERID,
+  appId: import.meta.env.VITE_APPID,
 };
 
 // Initialize Firebase
