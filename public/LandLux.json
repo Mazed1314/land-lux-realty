@@ -7,7 +7,7 @@
     "description": "This expansive agricultural land spans over 10 acres of fertile soil in a serene rural area. Ideal for those looking to delve into farming, the land offers ample opportunities for cultivating various crops, ranging from grains to vegetables. With its rich soil composition and access to water sources, it presents a promising venture for agricultural enthusiasts. Additionally, the property features convenient access roads and utilities, making it suitable for both large-scale farming operations and smaller, sustainable farming practices. Don't miss out on the chance to own this picturesque piece of countryside paradise.",
     "price": "$100,000",
     "status": "sale",
-    "area": "10 acres",
+    "area": "10",
     "location": "Rural Region, Bangladesh",
     "facilities": ["Irrigation system", "Farmhouse"]
   },
@@ -19,7 +19,7 @@
     "description": "Nestled in the tranquil countryside, this sprawling 50-acre ranch offers an idyllic setting for livestock farming. Boasting modern facilities and ample grazing pastures, it provides the perfect environment for raising cattle or horses. The ranch is equipped with sturdy barns, fencing, and watering troughs to ensure the comfort and well-being of the animals. With its picturesque vistas and peaceful surroundings, this property promises a rewarding lifestyle for those passionate about ranching. Whether you're a seasoned rancher or an aspiring one, this ranch is sure to exceed your expectations.",
     "price": "$500,000",
     "status": "sale",
-    "area": "50 acres",
+    "area": "50",
     "location": "Countryside, Thailand",
     "facilities": ["Barns", "Fencing", "Watering troughs"]
   },
@@ -31,7 +31,7 @@
     "description": "Step into the world of sustainable agriculture with this certified organic farm spanning 20 acres of pristine land. Located in a scenic valley, the farm boasts a diverse range of crops cultivated using environmentally friendly practices. From heirloom tomatoes to leafy greens, the farm produces high-quality organic produce sought after by discerning consumers. The property features state-of-the-art greenhouses, a charming farmhouse, and a tranquil pond, creating an inviting atmosphere for both work and relaxation. Embrace the opportunity to be a steward of the land and contribute to the growing demand for organic farming.",
     "price": "$700,000",
     "status": "sale",
-    "area": "20 acres",
+    "area": "20",
     "location": "Scenic Valley, Scotland",
     "facilities": ["Greenhouses", "Farmhouse", "Pond"]
   },
@@ -43,7 +43,7 @@
     "description": "Indulge in the art of winemaking with this prestigious vineyard spanning 30 acres in a renowned wine region. With its meticulously tended vines and optimal terroir, the vineyard produces exceptional grapes coveted by vintners worldwide. The property includes a fully equipped winery, inviting tasting room, and spacious cellar for aging wines to perfection. Whether you're a seasoned vintner or a budding oenophile, this vineyard offers a rare opportunity to own a piece of viticultural paradise. Elevate your wine experience and embark on a journey of vinicultural excellence with this esteemed vineyard estate.",
     "price": "$1,200,000",
     "status": "sale",
-    "area": "30 acres",
+    "area": "30",
     "location": "Wine Region, Finland",
     "facilities": ["Winery", "Tasting Room", "Cellar"]
   },
@@ -55,7 +55,7 @@
     "description": "Preserve the beauty of nature with this expansive forest land spanning 100 acres in a designated conservation area. Teeming with diverse flora and fauna, the forest offers a sanctuary for wildlife and a haven for outdoor enthusiasts. Wander along scenic trails, enjoy picnics in tranquil clearings, or ascend the observation tower for panoramic views of the surrounding landscape. With its untouched wilderness and pristine ecosystems, this forest land presents a unique opportunity for conservation-minded individuals or organizations. Immerse yourself in the splendor of nature and make a lasting impact with this remarkable conservation property.",
     "price": "Contact for Price",
     "status": "sale",
-    "area": "100 acres",
+    "area": "100",
     "location": "Conservation Area, Germany",
     "facilities": ["Trails", "Picnic Areas", "Observation Tower"]
   },
@@ -67,7 +67,7 @@
     "description": "Embark on a lucrative venture with this thriving teak plantation spanning 50 acres in a tropical region. With its mature teak trees ready for harvest, the plantation offers a valuable investment opportunity for timber production. The property features a modern processing facility and comfortable staff quarters, ensuring efficient operations and worker accommodations. Whether you're seeking a profitable timber business or a sustainable forestry project, this teak plantation is primed for success. Seize the chance to own a piece of the world's most sought-after hardwood and reap the rewards for years to come.",
     "price": "$900,000",
     "status": "rent",
-    "area": "50 acres",
+    "area": "50",
     "location": "Tropical Region, Pakistan",
     "facilities": ["Processing Facility", "Staff Quarters"]
   },
@@ -79,7 +79,7 @@
     "description": "Experience the allure of Mediterranean living with this picturesque olive grove spanning 40 acres in a sun-kissed region. Bursting with olive trees laden with plump fruits, the grove offers the perfect setting for olive oil production. The property boasts a modern processing plant and inviting tasting room, allowing you to savor the flavors of freshly pressed olive oil. Whether you're a culinary enthusiast or an investor seeking a profitable agricultural venture, this olive grove promises a blend of rustic charm and culinary delight. Embrace the Mediterranean lifestyle and indulge in the timeless tradition of olive cultivation with this exquisite grove estate.",
     "price": "$800,000",
     "status": "rent",
-    "area": "40 acres",
+    "area": "40",
     "location": "Mediterranean Region, New Zealand",
     "facilities": ["Processing Plant", "Tasting Room"]
   },
@@ -91,7 +91,7 @@
     "description": "Discover the bounty of nature with this thriving fruit orchard spanning 25 acres in a fertile valley. Bursting with a diverse array of fruit trees, including apples, oranges, and peaches, the orchard offers a year-round harvest of delicious produce. The property features a modern packaging facility and cold storage infrastructure, ensuring the quality and freshness of the fruits. Whether you're a fruit enthusiast or an aspiring orchardist, this orchard presents a golden opportunity to cultivate nature's bounty and reap the rewards of sustainable agriculture. Don't miss out on the chance to own this fruitful paradise.",
     "price": "$600,000",
     "status": "rent",
-    "area": "25 acres",
+    "area": "25",
     "location": "Fertile Valley, Australia",
     "facilities": ["Packaging Facility", "Cold Storage"]
   },
@@ -103,7 +103,7 @@
     "description": "Dive into the world of rubber production with this established plantation spanning 60 acres in a lush tropical rainforest. With its mature rubber trees and efficient tapping infrastructure, the plantation offers a lucrative opportunity for rubber latex extraction. The property includes a fully equipped processing unit and comfortable housing for laborers, ensuring smooth operations and worker welfare. Whether you're a seasoned rubber industry professional or an investor seeking a stable agricultural investment, this rubber plantation holds the promise of substantial returns. Seize the opportunity to tap into the booming rubber market and secure your foothold in this thriving industry.",
     "price": "$1,000,000",
     "status": "rent",
-    "area": "60 acres",
+    "area": "60",
     "location": "Tropical Rainforest, Zimbabwe",
     "facilities": ["Processing Unit", "Labor Housing"]
   }

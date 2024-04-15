@@ -24,7 +24,7 @@ const Slide = () => {
               />
             </div>
             <div className="md:w-4/12 my-auto p-2 mx-4 md:pl-8">
-              <h1 className="text-3xl text-center text-gray-100 lg:text-5xl font-bold [text-shadow:_0_1px_0_rgb(0_0_0_/_40%)]">
+              <h1 className="text-3xl text-center text-white lg:text-5xl font-bold [text-shadow:_0_1px_0_rgb(0_0_0_/_40%)]">
                 Build Your Dream Home
               </h1>
               <p className="py-6 text-black ">
@@ -51,7 +51,7 @@ const Slide = () => {
                   className="md:min-h-screen rounded flex p-4 items-center"
                 >
                   <div className="md:w-4/6 mx-auto">
-                    <h1 className="text-2xl text-gray-100 lg:text-5xl font-bold [text-shadow:_0_1px_0_rgb(0_0_0_/_40%)]">
+                    <h1 className="text-2xl text-white lg:text-5xl font-bold [text-shadow:_0_1px_0_rgb(0_0_0_/_40%)]">
                       Find Your Dream Plot with us
                     </h1>
                     <p className="py-6 text-white">
@@ -76,7 +76,7 @@ const Slide = () => {
                 />
               </div>
               <div className="md:w-5/12 p-2 my-auto md:mr-8 w-full">
-                <h1 className="text-3xl text-center text-gray-100 md:text-5xl font-bold [text-shadow:_0_1px_0_rgb(0_0_0_/_40%)]">
+                <h1 className="text-3xl text-center text-white md:text-5xl font-bold [text-shadow:_0_1px_0_rgb(0_0_0_/_40%)]">
                   Find Your Dream Plot with us
                 </h1>
                 <p className="py-6 text-black text-center">
@@ -100,7 +100,7 @@ const Slide = () => {
                 />
               </div>
               <div className="md:w-5/12 p-2 my-auto md:mr-8 w-full">
-                <h1 className="text-3xl text-center text-gray-100 md:text-5xl font-bold [text-shadow:_0_1px_0_rgb(0_0_0_/_40%)]">
+                <h1 className="text-3xl text-center text-white md:text-5xl font-bold [text-shadow:_0_1px_0_rgb(0_0_0_/_40%)]">
                   We Are Your Trusted Allies
                 </h1>
                 <p className="py-6 text-black text-center">

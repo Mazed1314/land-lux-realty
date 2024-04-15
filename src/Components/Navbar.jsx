@@ -1,16 +1,24 @@
 import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
   const handleLogOut = () => {
     logOut()
-      .then(() => console.log("user log out"))
+      .then(() => {
+        const notify = () => toast.success("Successfully log out");
+        notify();
+        console.log("user log out");
+      })
+
       .catch((error) => console.error(error));
   };
   const navLinks = (
     <>
+      <ToastContainer />
       <NavLink
         className={({ isActive }) =>
           isActive
@@ -21,7 +29,6 @@ const Navbar = () => {
       >
         Home
       </NavLink>
-
       {user && (
         <>
           <NavLink
@@ -36,7 +43,6 @@ const Navbar = () => {
           </NavLink>
         </>
       )}
-
       <NavLink
         className={({ isActive }) =>
           isActive
@@ -118,10 +124,10 @@ const Navbar = () => {
                 </div>
                 <ul
                   tabIndex={0}
-                  className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+                  className="space-y-1 menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
                 >
                   <NavLink to="/profile">Profile</NavLink>
-                  <NavLink to="/setting">Settings</NavLink>
+                  <NavLink to="/edit-user">Update Profile</NavLink>
                   <NavLink onClick={handleLogOut} to="/">
                     Logout
                   </NavLink>

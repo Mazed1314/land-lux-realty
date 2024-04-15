@@ -1,19 +1,12 @@
 import { NavLink } from "react-router-dom";
+import "animate.css";
+import PropTypes from "prop-types";
 
 const Card = ({ card }) => {
-  const {
-    image,
-    estate_title,
-    status,
-    price,
-    area,
-    description,
-    segment_name,
-    id,
-  } = card;
+  const { image, estate_title, status, area, description, id } = card;
 
   return (
-    <div className="rounded-md md:w-96 bg-base-100 shadow-xl border relative">
+    <div className="rounded-md md:w-96 bg-base-100 shadow-xl border border-sky-200 animate__duration-2s animate__animated animate__slideInUp">
       <figure className="p-4 ">
         <img
           className="rounded-t-md w-full h-[150px] md:h-[200px]"
@@ -22,41 +15,43 @@ const Card = ({ card }) => {
         />
       </figure>
       <div className="card-body pt-0">
-        <small>
-          <div
-            // style={{ background: "rgba(255, 255, 255, 0.9)" }}
-            className="border bg-orange-500 text-white absolute -rotate-45 top-4 left-1 p-2 rounded"
-          >
-            <div className="font-bold text-md">{price}</div>
-            <div className="text-center text-bold">
-              for <span className="font-bold">{status}</span>
-            </div>
-          </div>
-        </small>
         <div className="">
-          <h2 className="card-title font-bold text-2xl">{estate_title}</h2>
+          <h2 className="card-title font-bold text-2xl animate__delay-1s animate__animated animate__heartBeat">
+            {estate_title}
+          </h2>
         </div>
         <div className="flex justify-between items-center">
-          <p className=" rounded-3xl font-medium text-lg">{segment_name}</p>
-          <p className="font-semibold text-lg  rounded-3xl">
-            Area :{" "}
-            <span className="text-slate-600 font-medium text-md">{area}</span>
+          <p className="flex font-semibold text-lg rounded-3xl space-x-1">
+            <div className=" font-semibold text-xl animate__delay-1s animate__animated animate__bounceInDown">
+              {area}
+            </div>
+
+            <div className="text-slate-600 font-normal">acres</div>
+          </p>
+          <p className="rounded-3xl text-lg">
+            for <span className="font-semibold text-xl"> {status}</span>
           </p>
         </div>
         <div className="card-actions justify-between text-gray-600">
-          <p>
-            {description.slice(0, description.indexOf("."))}...
-            <NavLink
-              className={"font-bold text-black"}
-              to={`/estate-details/${id}`}
-            >
-              View Details
-            </NavLink>
-          </p>
+          <p>{description.slice(0, description.indexOf("."))}...</p>
+        </div>
+        <div className="flex justify-center">
+          <NavLink
+            className={
+              "mt-4 bg-transparent border-sky-400 text-center rounded-md text-sky-400 btn text-md md:text-lg btn-sm font-normal hover:bg-sky-400 hover:text-white animate__delay-2s animate__animated animate__flipInX "
+            }
+            to={`/estate-details/${id}`}
+          >
+            View Details
+          </NavLink>
         </div>
       </div>
     </div>
   );
+};
+
+Card.propTypes = {
+  card: PropTypes.object,
 };
 
 export default Card;

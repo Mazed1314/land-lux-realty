@@ -14,9 +14,7 @@ const Register = () => {
 
   const handleRegister = (e) => {
     e.preventDefault();
-    // eslint-disable-next-line no-unused-vars
     const name = e.target.name.value;
-    // eslint-disable-next-line no-unused-vars
     const photoURL = e.target.photoURL.value;
     const email = e.target.email.value;
     const password = e.target.password.value;
@@ -42,7 +40,10 @@ const Register = () => {
     // console.log(name, email, password, photoURL);
     createUser(email, password)
       .then((userCredential) => {
-        updateProfile();
+        updateProfile(userCredential.user, {
+          displayName: name,
+          photoURL: photoURL,
+        });
         console.log(userCredential.user);
         e.target.reset();
         const notifySuccess = () =>

@@ -31,7 +31,8 @@ const CardDetails = () => {
         <div className="py-4 md:py-8 text-lg text-gray-600">{description}</div>
         <div className="my-4 md:flex justify-between text-xl font-bold">
           <p>
-            Area : <span className="text-gray-600 font-medium">{area}</span>
+            Area : <span className="text-gray-600 font-medium">{area} </span>{" "}
+            <span className="font-normal">acres</span>
           </p>
           <p>
             Price : <span className="text-gray-600 font-medium">{price}</span>

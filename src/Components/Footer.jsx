@@ -28,7 +28,7 @@ const Footer = () => {
             <p className="text-sm">
               2312 LandLuxe Street, Chittagong, Bangladesh
             </p>
-            <p className="text-sm">Email: info@landluxrealty.com</p>
+            <p className="text-sm">Email: landluxe@realty.com</p>
             <p className="text-sm">Phone: +123-456-7890</p>
           </div>
           <div className="mb-8 ">

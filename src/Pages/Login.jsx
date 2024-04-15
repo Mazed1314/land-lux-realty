@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
@@ -7,12 +7,14 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa6";
 import { Helmet } from "react-helmet-async";
+import { useForm } from "react-hook-form";
 
 const Login = () => {
-  const location = useLocation();
-  const navigate = useNavigate();
-  console.log("location in the login page", location);
-  const from = location?.state ? location.state : "/profile";
+  // const location = useLocation();
+  // const navigate = useNavigate();
+  // console.log("location in the login page", location);
+  // const from = location?.state ? location.state : "/profile";
+  const { register, handleSubmit } = useForm();
 
   const { signInUser, signInWithGoogle, signInWithGitHub } =
     useContext(AuthContext);
@@ -22,11 +24,11 @@ const Login = () => {
     signInWithGoogle()
       .then((userCredential) => {
         console.log(userCredential.user);
-        const notifyGl = () => toast.success("Successfully Google Login");
-        notifyGl();
-        if (userCredential.user) {
-          navigate(from);
-        }
+        const notifyGoogle = () => toast.success("Successfully Google Login");
+        notifyGoogle();
+        // if (userCredential.user) {
+        //   navigate(from);
+        // }
       })
       .catch((error) => {
         console.error(error);
@@ -39,9 +41,9 @@ const Login = () => {
     signInWithGitHub()
       .then((userCredential) => {
         console.log(userCredential.user);
-        navigate(from);
-        const notifyG = () => toast.success("Successfully Github Login");
-        notifyG();
+        // navigate(from);
+        const notifyGit = () => toast.success("Successfully Github Login");
+        notifyGit();
       })
       .catch((error) => {
         console.error(error);
@@ -50,20 +52,39 @@ const Login = () => {
         notifyGitError();
       });
   };
-  const handleLogin = (e) => {
-    e.preventDefault();
-    const email = e.target.email.value;
-    const password = e.target.password.value;
-    console.log(email, password);
+  // const handleLogin = (e) => {
+  //   e.preventDefault();
+  //   const email = e.target.email.value;
+  //   const password = e.target.password.value;
+  //   console.log(email, password);
+
+  //   signInUser(email, password)
+  //     .then((userCredential) => {
+  //       console.log(userCredential.user);
+  //       e.target.reset();
+  //       // navigate(from);
+
+  //       const notifyLogin = () => toast.success("Successfully Login");
+  //       notifyLogin();
+  //     })
+  //     .catch((error) => {
+  //       console.error(error.message);
+  //       const notify = () => toast.error("Wrong email or password");
+  //       notify();
+  //     });
+  // };
+
+  const onSubmit = (data) => {
+    const { email, password } = data;
 
     signInUser(email, password)
       .then((userCredential) => {
         console.log(userCredential.user);
-        e.target.reset();
-        navigate(from);
+        // e.target.reset();
+        // navigate(from);
 
-        const notifyS = () => toast.success("Successfully Login");
-        notifyS();
+        const notifyLogin = () => toast.success("Successfully Login");
+        notifyLogin();
       })
       .catch((error) => {
         console.error(error.message);
@@ -71,6 +92,7 @@ const Login = () => {
         notify();
       });
   };
+
   return (
     <div className="hero md:min-h-screen bg-gray-50 rounded-t-md">
       <Helmet>
@@ -81,7 +103,7 @@ const Login = () => {
           <h1 className="text-2xl md:text-5xl font-bold">Login now!</h1>
         </div>
         <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-          <form onSubmit={handleLogin} className="card-body pb-0">
+          <form onSubmit={handleSubmit(onSubmit)} className="card-body pb-0">
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Email</span>
@@ -91,7 +113,7 @@ const Login = () => {
                 name="email"
                 placeholder="email"
                 className="input input-bordered"
-                required
+                {...register("email", { required: true })}
               />
             </div>
             <div className="form-control relative">
@@ -103,7 +125,7 @@ const Login = () => {
                 name="password"
                 placeholder="password"
                 className="input input-bordered"
-                required
+                {...register("password", { required: true })}
               />
               <span
                 onClick={() => setShow(!show)}

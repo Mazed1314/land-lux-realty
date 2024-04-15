@@ -20,7 +20,7 @@ const EditProfile = () => {
             <form className="card-body pb-0">
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Name</span>
+                  <span className="label-text">New Name</span>
                 </label>
                 <input
                   type="text"
@@ -32,7 +32,7 @@ const EditProfile = () => {
               </div>
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Photo Link</span>
+                  <span className="label-text">New Photo Link</span>
                 </label>
                 <input
                   type="text"
@@ -44,7 +44,7 @@ const EditProfile = () => {
               </div>
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Email</span>
+                  <span className="label-text">New Email</span>
                 </label>
                 <input
                   type="text"
@@ -56,7 +56,7 @@ const EditProfile = () => {
               </div>
               <div className="form-control relative">
                 <label className="label">
-                  <span className="label-text">Password</span>
+                  <span className="label-text">New Password</span>
                 </label>
                 <input
                   type={show ? "password" : "text"}
@@ -72,8 +72,10 @@ const EditProfile = () => {
                   {show ? <FaRegEyeSlash /> : <FaRegEye />}
                 </span>
               </div>
-              <div className="form-control mt-6">
-                <button className="btn bg-sky-400 text-white">Update</button>
+              <div className="form-control my-4 py-2">
+                <button className="btn btn-sm bg-sky-400 text-white">
+                  Update
+                </button>
               </div>
             </form>
           </div>
