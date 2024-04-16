@@ -1,5 +1,5 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, A11y } from "swiper/modules";
+import { Navigation, Pagination, A11y, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -8,19 +8,23 @@ const Slide = () => {
   return (
     <div>
       <Swiper
-        modules={[Navigation, Pagination, A11y]}
+        modules={[Autoplay, Navigation, Pagination, A11y]}
         spaceBetween={50}
         slidesPerView={1}
         navigation
         pagination={{ clickable: true }}
         scrollbar={{ draggable: true }}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
       >
         <SwiperSlide>
-          <div className="flex flex-col md:flex-row-reverse rounded-t-lg bg-gradient-to-t md:bg-gradient-to-r from-cyan-300 to-cyan-50">
-            <div className="md:w-8/12 w-full">
+          <div className="w-full min-h-screen flex flex-col md:flex-row-reverse rounded-t-lg bg-gradient-to-t md:bg-gradient-to-r from-cyan-300 to-cyan-50">
+            <div className="md:w-8/12 w-full flex flex-cols justify-center">
               <img
                 src="/Images/market-value-of-land-compressor-removebg-preview.png"
-                className="w-full h-auto rounded-md"
+                className="w-full rounded-md"
               />
             </div>
             <div className="md:w-4/12 my-auto p-2 mx-4 md:pl-8">
@@ -36,10 +40,10 @@ const Slide = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="w-full hidden md:block">
+          <div className=" hidden min-h-screen md:block">
             <div className="px-2">
               <div
-                className="w-full h-full text-center rounded md:min-h-screen"
+                className="w-full text-center rounded md:min-h-screen"
                 style={{
                   backgroundSize: "cover",
                   backgroundRepeat: "no-repeat",
@@ -66,16 +70,16 @@ const Slide = () => {
             </div>
           </div>
 
-          <div className="w-full block md:hidden h-4/5 my-auto rounded-t-lg bg-gradient-to-t md:bg-gradient-to-l from-cyan-300 to-cyan-50">
-            <div className="px-2 md:flex flex-row">
-              <div className="md:w-7/12 w-full flex justify-center p-4">
+          <div className="w-full min-h-screen block md:hidden px-2 rounded-t-lg bg-gradient-to-t md:bg-gradient-to-l from-cyan-300 to-cyan-50">
+            <div className="flex flex-col min-h-screen">
+              <div className="w-full h-[400px] flex flex-col justify-center p-4">
                 <img
                   className="w-full h-[200px]"
                   src="/Images/220506-corelogic.png"
                   alt=""
                 />
               </div>
-              <div className="md:w-5/12 p-2 my-auto md:mr-8 w-full">
+              <div className="p-2 my-auto w-full">
                 <h1 className="text-3xl text-center text-white md:text-5xl font-bold [text-shadow:_0_1px_0_rgb(0_0_0_/_40%)]">
                   Find Your Dream Plot with us
                 </h1>
@@ -90,29 +94,27 @@ const Slide = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="w-full h-4/5 my-auto rounded-t-lg bg-gradient-to-t md:bg-gradient-to-l from-cyan-300 to-cyan-50">
-            <div className="px-2 md:flex flex-row">
-              <div className="md:w-7/12 w-full flex justify-center p-4">
-                <img
-                  className="rounded-full w-[300px] h-[300px] md:w-[500px] md:h-[500px]"
-                  src="/Images/istockphoto-1409298953-170667a.webp"
-                  alt=""
-                />
-              </div>
-              <div className="md:w-5/12 p-2 my-auto md:mr-8 w-full">
-                <h1 className="text-3xl text-center text-white md:text-5xl font-bold [text-shadow:_0_1px_0_rgb(0_0_0_/_40%)]">
-                  We Are Your Trusted Allies
-                </h1>
-                <p className="py-6 text-black text-center">
-                  At LandLuxe Realty, we stand as your trusted allies in the
-                  realm of land real estate. With unwavering reliability and
-                  unwavering commitment, we offer our expertise and support to
-                  guide you through every step of your land acquisition journey.
-                  Whether you're seeking to buy, sell, or invest in land, count
-                  on us to be by your side, providing unparalleled service and
-                  dedication to your success.
-                </p>
-              </div>
+          <div className="flex flex-col min-h-screen md:flex-row rounded-t-lg bg-gradient-to-t md:bg-gradient-to-r from-cyan-300 to-cyan-50">
+            <div className="md:w-8/12 py-4 w-full flex justify-center my-auto">
+              <img
+                className="rounded-full w-[300px] h-[300px] md:w-[500px] md:h-[500px]"
+                src="/Images/istockphoto-1409298953-170667a.webp"
+                alt=""
+              />
+            </div>
+            <div className="md:w-4/12 my-auto p-2 mx-4 md:pl-8">
+              <h1 className="text-3xl text-center text-white lg:text-5xl font-bold [text-shadow:_0_1px_0_rgb(0_0_0_/_40%)]">
+                We Are Your Trusted Allies
+              </h1>
+              <p className="py-6 text-black ">
+                At LandLuxe Realty, we stand as your trusted allies in the realm
+                of land real estate. With unwavering reliability and unwavering
+                commitment, we offer our expertise and support to guide you
+                through every step of your land acquisition journey. Whether
+                you're seeking to buy, sell, or invest in land, count on us to
+                be by your side, providing unparalleled service and dedication
+                to your success.
+              </p>
             </div>
           </div>
         </SwiperSlide>

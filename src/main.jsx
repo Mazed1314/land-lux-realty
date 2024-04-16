@@ -15,6 +15,7 @@ import About from "./Components/About";
 import Contact from "./Components/Contact";
 import { HelmetProvider } from "react-helmet-async";
 import EditProfile from "./Components/EditProfile";
+import SavedProperties from "./Components/SavedProperties";
 
 const router = createBrowserRouter([
   {
@@ -48,6 +49,14 @@ const router = createBrowserRouter([
         element: (
           <PrivateRoute>
             <Profile></Profile>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/saved-property",
+        element: (
+          <PrivateRoute>
+            <SavedProperties></SavedProperties>
           </PrivateRoute>
         ),
       },

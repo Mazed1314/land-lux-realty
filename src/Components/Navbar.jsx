@@ -21,9 +21,7 @@ const Navbar = () => {
       <ToastContainer />
       <NavLink
         className={({ isActive }) =>
-          isActive
-            ? "md:border-b-4 pb-2 border-cyan-400 text-cyan-400 font-bold"
-            : "font-bold"
+          isActive ? "md:border-b-4 pb-2 border-black font-bold" : "font-bold"
         }
         to="/"
       >
@@ -33,21 +31,25 @@ const Navbar = () => {
         <>
           <NavLink
             className={({ isActive }) =>
-              isActive
-                ? "border-b-4 pb-2 border-cyan-400 text-cyan-400 font-bold"
-                : "font-bold"
+              isActive ? "border-b-4 pb-2 border-black  font-bold" : "font-bold"
             }
             to="/profile"
           >
             Profile
           </NavLink>
+          <NavLink
+            className={({ isActive }) =>
+              isActive ? "border-b-4 pb-2 border-black  font-bold" : "font-bold"
+            }
+            to="/saved-property"
+          >
+            Saved Properties
+          </NavLink>
         </>
       )}
       <NavLink
         className={({ isActive }) =>
-          isActive
-            ? "md:border-b-4 pb-2 border-cyan-400 text-cyan-400 font-bold"
-            : "font-bold"
+          isActive ? "md:border-b-4 pb-2 border-black  font-bold" : "font-bold"
         }
         to="/about"
       >
@@ -55,9 +57,7 @@ const Navbar = () => {
       </NavLink>
       <NavLink
         className={({ isActive }) =>
-          isActive
-            ? "md:border-b-4 pb-2 border-cyan-400 text-cyan-400 font-bold"
-            : "font-bold"
+          isActive ? "md:border-b-4 pb-2 border-black  font-bold" : "font-bold"
         }
         to="/contact"
       >
@@ -131,6 +131,7 @@ const Navbar = () => {
                   <NavLink onClick={handleLogOut} to="/">
                     Logout
                   </NavLink>
+                  <NavLink to="/register">Register</NavLink>
                 </ul>
               </div>
             </>

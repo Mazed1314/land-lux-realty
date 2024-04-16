@@ -39,7 +39,7 @@ const Profile = () => {
           </div>
           <div className="flex justify-center pt-2 space-x-4 align-center">
             <Link to={"/edit-user"}>
-              <FaEdit className="absolute top-2 right-2 text-2xl text-sky-400" />
+              <FaEdit className="absolute top-2 right-2 text-2xl hover:text-sky-400" />
             </Link>
             <a
               rel="noopener noreferrer"

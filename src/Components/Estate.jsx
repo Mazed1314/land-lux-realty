@@ -23,7 +23,7 @@ const Estate = () => {
           Exclusive Estates.
         </p>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 px-2 mb-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-2 mb-6">
         {estate.map((card, index) => (
           <Card key={index} card={card}></Card>
         ))}
