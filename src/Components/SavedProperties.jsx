@@ -17,7 +17,7 @@ const SavedProperties = () => {
         </h2>
       </div>
       <div className="md:flex gap-5">
-        <div className="card md:w-96 bg-base-100 border my-2 border-sky-400 shadow-xl">
+        <div className="card bg-base-100 border my-2 border-sky-400 shadow-xl">
           <figure className="px-10 pt-10">
             <img
               src="/Images/homepage-spot-agent-lg-1.webp"
@@ -40,7 +40,7 @@ const SavedProperties = () => {
             </div>
           </div>
         </div>
-        <div className="card md:w-96 bg-base-100 border my-2 border-sky-400 shadow-xl">
+        <div className="card bg-base-100 border my-2 border-sky-400 shadow-xl">
           <figure className="px-10 pt-10">
             <img
               src="/Images/homepage-spot-rent-lg-1.webp"
@@ -63,7 +63,7 @@ const SavedProperties = () => {
             </div>
           </div>
         </div>
-        <div className="card md:w-96 bg-base-100 border my-2 border-sky-400 shadow-xl">
+        <div className="card bg-base-100 border my-2 border-sky-400 shadow-xl">
           <figure className="px-10 pt-10">
             <img
               src="/Images/homepage-spot-sell-lg-1.webp"
@@ -81,7 +81,7 @@ const SavedProperties = () => {
             </p>
             <div className="card-actions mt-4">
               <button className="btn btn-md font-bold border-sky-400 text-xl text-sky-500 bg-transparent">
-                See your options
+                See your option
               </button>
             </div>
           </div>

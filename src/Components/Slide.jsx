@@ -94,7 +94,7 @@ const Slide = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="flex flex-col min-h-screen md:flex-row rounded-t-lg bg-gradient-to-t md:bg-gradient-to-r from-cyan-300 to-cyan-50">
+          <div className="flex flex-col min-h-screen md:flex-row rounded-t-lg bg-gradient-to-t md:bg-gradient-to-l from-cyan-300 to-cyan-50">
             <div className="md:w-8/12 py-4 w-full flex justify-center my-auto">
               <img
                 className="rounded-full w-[300px] h-[300px] md:w-[500px] md:h-[500px]"

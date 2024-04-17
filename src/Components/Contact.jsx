@@ -7,7 +7,7 @@ const Contact = () => {
         <title>LandLuxe | Contact</title>
       </Helmet>
       <section className="py-6 bg-black text-white rounded-t-md">
-        <div className="grid max-w-6xl grid-cols-1 px-6 mx-auto lg:px-8 md:grid-cols-2 md:divide-x">
+        <div className="grid max-w-6xl md:min-h-screen grid-cols-1 px-6 mx-auto lg:px-8 md:grid-cols-2 md:divide-x">
           <div className="py-6 md:py-0 md:px-6">
             <h1 className="text-4xl font-bold">Get in touch</h1>
             <p className="pt-2 pb-4">
