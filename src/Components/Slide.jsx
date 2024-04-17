@@ -31,7 +31,7 @@ const Slide = () => {
               <h1 className="text-3xl text-center text-white lg:text-5xl font-bold [text-shadow:_0_1px_0_rgb(0_0_0_/_40%)]">
                 Build Your Dream Home
               </h1>
-              <p className="py-6 text-black ">
+              <p className="py-6 text-black text-center">
                 Discover the perfect canvas for your dream home with our real
                 estate company. Let us help you turn your vision into reality,
                 from selecting the ideal location to designing every detail.
@@ -106,7 +106,7 @@ const Slide = () => {
               <h1 className="text-3xl text-center text-white lg:text-5xl font-bold [text-shadow:_0_1px_0_rgb(0_0_0_/_40%)]">
                 We Are Your Trusted Allies
               </h1>
-              <p className="py-6 text-black ">
+              <p className="py-6 text-black text-center">
                 At LandLuxe Realty, we stand as your trusted allies in the realm
                 of land real estate. With unwavering reliability and unwavering
                 commitment, we offer our expertise and support to guide you
